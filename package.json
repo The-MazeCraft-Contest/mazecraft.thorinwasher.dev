@@ -15,7 +15,7 @@
     "@astrojs/sitemap": "^3.0.0",
     "astro": "^3.0.13",
     "astro-google-fonts-optimizer": "^0.2.2",
-    "date-fns": "^2.30.0"
+    "date-fns": "^3.0.0"
   },
   "devDependencies": {
     "rollup": ">=3",
