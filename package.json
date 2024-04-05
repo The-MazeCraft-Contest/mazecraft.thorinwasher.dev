@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "rollup": ">=3",
-    "prettier-plugin-astro": "^0.12.0",
+    "prettier-plugin-astro": "^0.13.0",
     "sass": "^1.67.0"
   }
 }
