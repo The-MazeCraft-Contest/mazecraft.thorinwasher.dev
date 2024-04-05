@@ -31,7 +31,7 @@ export const SOCIAL_MEDIA_ITEMS = [
   {
     path: '#',
     title: 'Get Started!',
-    iconClass: 'fa-play',
+    iconClass: 'fa-robot',
   },
 ];
 
