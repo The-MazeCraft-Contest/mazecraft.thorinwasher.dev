@@ -1,46 +1,45 @@
 export const NAV_ITEMS = [
   {
     path: '/',
-    title: 'This is Massively',
+    title: 'Overview',
   },
   {
-    path: '/generic',
-    title: 'Generic Page',
+    path: '/leaderboard',
+    title: 'Leaderboards',
   },
   {
-    path: '/elements',
-    title: 'Elements Reference',
+    path: '/rules',
+    title: 'The Rules',
+  },
+  {
+    path: '/guide',
+    title: 'Getting Started',
   },
 ];
 
 export const SOCIAL_MEDIA_ITEMS = [
   {
     path: '#',
-    title: 'Twitter',
-    iconClass: 'fa-twitter',
-  },
-  {
-    path: '#',
-    title: 'Facebook',
-    iconClass: 'fa-facebook-f',
-  },
-  {
-    path: '#',
-    title: 'Instagram',
-    iconClass: 'fa-instagram',
+    title: 'Discord',
+    iconClass: 'fa-discord',
   },
   {
     path: '#',
     title: 'GitHub',
     iconClass: 'fa-github',
   },
+  {
+    path: '#',
+    title: 'Get Started!',
+    iconClass: 'fa-play',
+  },
 ];
 
 export const SITE = {
-  title: 'Massively for Astro',
-  description: 'A free, fully responsive HTML5 + CSS3 site template, ported to Astro',
-  url: 'https://astro-massively.darko.io',
-  githubUrl: 'https://github.com/DBozhinovski/astro-massively',
+  title: 'Mazecraft',
+  description: 'A friendly development challenge centred around traversing an infinite and dynamic Minecraft maze!',
+  url: 'https://the-mazecraft-contest.github.io/mazecraft.thorinwasher.dev/#',
+  githubUrl: 'https://github.com/The-MazeCraft-Contest/mazecraft.thorinwasher.dev/deployments',
 };
 
 export const CONTACT = {
