@@ -1,96 +1,114 @@
-![]('/../public/images/og-image.png)
+# Massively for Astro
 
-# [ASTRO-CUBE](https://astro-cube.vercel.app) 🧊
+Massively is a free, fully responsive HTML5 + CSS3 site template designed by [@ajlkn](https://twitter.com/ajlkn) for
+[HTML5 UP](https://html5up.net) and released for free under the [Creative Commons license](https://html5up.net/license).
+Remixed for [Astro](https://astro.build) by [@d_bozhinovski](https://twitter.com/d_bozhinovski).
 
-a tiny, almost-unopinionated [Astro](https://astro.build/) starter for your next blog, documentation, personal/marketing website, and more.
+This is a port of the template for Astro, to be used as a theme. It's been Astroized as much as I deemed practical. I
+imagine it will need to change and evolve if there's interest in it, so I'm open to suggestions (and PRs) on how to
+Astroize it further.
 
-it comes with the [CUBE CSS](https://cube.fyi/) file structure, a methodology for managing stylesheets efficiently no matter the size of the project.
+## [\[Click here for the Demo\]](https://astro-massively.darko.io)
 
-the project is mostly barebones, the goal isn't to provide a batteries-included template, just an easy starter kit and stylesheets to copy/paste from.
+![intro.png](./intro.png)
 
-most styles are for demo purposes and to explain the underlying philosophy: "Be the browser's mentor, not its micromanager" (see [buildexcellentwebsit.es](https://buildexcellentwebsit.es)).
-
-## features
-
-- **[CUBE CSS](https://cube.fyi/) implementation**: take a look at the docs, they are concise and explain way better than i would
-- **fluid and responsive**: it looks great no matter the device size
-  - [Every Layout](https://every-layout.dev/) examples for layout elements
-  - [Utopia](https://utopia.fyi/) for fluid `clamp()`-based font sizes and spacing
-- **lightweight**: 💯 [lighthouse score](https://developer.chrome.com/en/docs/lighthouse/performance/performance-scoring/) across the board — not surprising considering the size of the project, but worth mentioning
-- **dark-mode ready**: implement your own theme switcher if you're into that sort of thing, all you have to do is toggle the `data-theme` attribute on the body
-- **SEO** ready: basic SEO meta-tags are set-up, with `sitemap`s automatically generated at build time
-
-## installation
-
-### clone this repo
-
-```bash
-git clone https://github.com/williamhzo/astro-cube.git
-```
-
-### instal dependencies
-
-```bash
-cd astro-cube
-```
-
-```bash
-npm i
-```
-
-### spin up local dev server
-
-```bash
-npm run dev
-```
-
-### build to `./dist/`
-
-```bash
-npm run build
-```
-
-### preview production build
-
-```bash
-npm run preview
-```
-
-### ...or use the template directly ➡️ "Use this template" > "Create a new repository"
-
-## contributions are welcome! 👋
-
-it's great if this kit can be helpful to some folks out there, i'm open to feedback and greatly appreciate contributions, feel free to chip in for fixes, suggestions, or features! let me know if you have improvement ideas.
+<div style="display: flex; justify-content: space-between; padding-bottom: 15px;">
+  <img style="width: 32%;" src="./heading.png" />
+  <img style="width: 32%;" src="./posts.png" />
+  <img style="width: 32%;" src="./typography.png" />
+</div>
+<div style="display: flex; justify-content: space-between;">
+  <img style="width: 32%;" src="./footer.png" />
+  <img style="width: 32%;" src="./buttons.png" />
+  <img style="width: 32%;" src="./image-grid.png" />
+</div>
 
 ---
 
-## credits
+## Quickstart
 
-greater minds than mine are behind the choices in this kit, i'd like to mention them for the inspiration and learning provided:
+1. Run `npx degit https://github.com/DBozhinovski/astro-massively my-site-name` to get a "clean slate" copy of this
+   repo.
+2. Run `npm install` inside the cloned directory to install dependencies.
+3. Customize and deploy!
 
-### **[Astro core & docs team](https://docs.astro.build/en/getting-started/)**
+## Features
 
-along with contributors, for a great onboarding experience and a wholesome community.
+- Easily customizable for many use cases
+- Consistent look and feel
+- Uses `astro 3.0.13` and should be able to support newer ones easily.
+- Huge set of components to fit any type of site (see the `/elements` page)
+- REALLY backward compatible - the design and styles were built a while ago :sweat_smile:
+- Sitemap, RSS feed, Google Fonts Optimizer...
 
-### **[Andy Bell](https://andy-bell.co.uk/)**
+## Getting started
 
-Andy is a great source of inspiration for building robust UI working with the browser, rather than against it. but also for reminding me that CSS is an extremely powerful tool as it is. CUBE CSS really clicked to me as it brought pure "traditional" CSS to the component-first world of today.
+TL;DR; Clone -> install -> ? -> profit. Standard Astro stuff.
 
-- [Every Layout](https://every-layout.dev/)
-- [CUBE CSS](https://cube.fyi/)
+In addition to the run-of-the-mill Astro project structures, you can find a `/scripts` directory in `/src`. These are
+the animation scripts ported over from the original theme. They enable some features, such as the parallax effect for
+the intro header/logo transition. They can be easily disabled, however, if you'd like to have a JS-less page (see
+below).
 
-### **[Heydon Pickering](https://heydonworks.com/)**
+## General Configuration
 
-Heydon provides amazing insights and spicy takes on how to build for the web, from an inclusive and accessible perspective.
+Title, navigation links, social media links, URL etc. can be customized from the `./src/config.ts` file.
 
-- [Inclusive Components](https://inclusive-components.design/)
-- [Webbed Briefs](https://briefs.video/)
-- [Every Layout](https://every-layout.dev/)
+Changing these allows you to easily have a ready-to-deploy webpage without touching any code.
 
-### **[Lene Saile](https://www.lenesaile.com/en/)**
+### A note on the logo
 
-Lene made an amazing [Eleventy](https://www.11ty.dev/) starter based on CUBE CSS which is way more mature and complete than this one. it comes batteries included to build a full-blown blog with 11y in a breeze, i'd definitely recommend checking it out.
+The logo past the intro animation is just the text of the web page's title (found inside `./src/config.ts`). If you need
+to change that, it's enough to just add an image (or otherwise, customize the markup) in
+`./src/components/IntroHeader.astro`. The element that needs it's markup changed is `<header id="header">...</header>`.
 
-her starter greatly inspired me to build one for Astro (it will be a separate one from this minimal one).
+Any method of [importing images available in Astro](https://docs.astro.build/en/guides/images/) should do the trick.
 
-- [Eleventy Excellent](https://github.com/madrilene/eleventy-excellent)
+## Development and customization notes
+
+### Removing the animation for a fully static, zero JS site
+
+The original template design has a jQuery-based 😧 parallax animation, that makes the site more of an eye-candy. Of
+course, it looks fairly decent without that animation as well. Disabling it is pretty easy:
+
+1. Remove all `<script>` tags from `./src/components/IntroHeader.astro`
+2. Remove the conditional element that renders if there's an intro prop passed to the component.
+3. As a bonus, if you'd like to keep it lighter in your site's repo, you can also remove the entire `./src/scripts`
+   directory.
+
+Initially, I planned on porting the animation to something lighter, ideally vanilla JS. I still plan on doing it, but it
+turned out not to be as trivial as I'd initially hoped. PRs are also welcome 😊.
+
+### Styling
+
+All styles can be found inside `./src/styles/sass`. They aren't changed much from what the original author did with
+them, except customizing a few arithmetic operations to fix some SASS warnings.
+
+The structure is fairly standard and what you'd expect to find in a regular SASS-based project.
+
+### JavaScript
+
+As briefly mentioned above, the only piece of JS on the page, the animation, is based on jQuery. Some modifications had
+to be made to the scripts to make them work as modules so that Astro can optimize them, but other than that they are
+true to the original. They could do with a more "modern" touch, so PRs are welcome.
+
+### Favicon
+
+Replace the `./public/favicon.svg` with your own `favicon.svg` file or change both the extension and the file inside
+`./src/layouts/Layout.astro`, line 24.
+
+### Components
+
+The original template offers a fairly rich set of components, in the sense that it has a bunch of HTML blocks
+pre-styled. These offer a solid base for creating anything custom in the style of the template. Have a look at
+[/generic](https://astro-massively.darko.io/generic/) and [/elements](https://astro-massively.darko.io/elements/).
+
+Some of the basic building blocks of the template have already been separated as Astro components in the
+`./src/`components/` directory and can be easily re-used for any customization.
+
+### Removing attribution
+
+This theme was originally published as a template on [HTML5 UP](https://html5up.net), under the
+[Creative Commons license](https://html5up.net/license). This port contains that info and attributes the author
+accordingly. The original author allows for non-attribution use of the templates via
+[https://pixelarity.com](https://pixelarity.com).
