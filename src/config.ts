@@ -4,7 +4,7 @@ export const NAV_ITEMS = [
     title: 'Overview',
   },
   {
-    path: '/leaderboard',
+    path: '/leaderboards',
     title: 'Leaderboards',
   },
   {
@@ -19,19 +19,14 @@ export const NAV_ITEMS = [
 
 export const SOCIAL_MEDIA_ITEMS = [
   {
-    path: '#',
+    path: 'https://discord.gg/3qN6bhxBEB',
     title: 'Discord',
     iconClass: 'fa-discord',
   },
   {
-    path: '#',
+    path: 'https://github.com/The-MazeCraft-Contest',
     title: 'GitHub',
     iconClass: 'fa-github',
-  },
-  {
-    path: '#',
-    title: 'Get Started!',
-    iconClass: 'fa-robot',
   },
 ];
 

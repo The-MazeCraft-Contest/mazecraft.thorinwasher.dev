@@ -4,18 +4,37 @@ import { NAV_ITEMS, SOCIAL_MEDIA_ITEMS } from 'src/config';
 const { url } = Astro;
 const { pathname } = url;
 ---
+<script>
+const input = document.getElementById("text");
+const copyButton = document.getElementById("copy");
 
+const copyText = (e) => {
+  input.select();
+  document.execCommand("copy");
+  e.currentTarget.setAttribute("tooltip", "Copied!");
+};
+
+const resetTooltip = (e) => {
+  e.currentTarget.setAttribute("tooltip", "Copy IP");
+};
+
+copyButton.addEventListener("click", (e) => copyText(e));
+copyButton.addEventListener("mouseover", (e) => resetTooltip(e));
+</script>
 <nav id="nav">
   <ul class="links">
-    {
-      NAV_ITEMS.map((item) => {
-        return (
-          <li class={pathname === item.path ? 'active' : ''}>
-            <a href={item.path}>{item.title}</a>
-          </li>
-        );
-      })
-    }
+    <li class="" id="overview">
+		<a href="/">Overview</a>
+	</li>
+	<li class="" id="leaderboards">
+		<a href="/leaderboards">Leaderboards</a>
+	</li>
+	<li class="" id="rules">
+		<a href="/rules">Rules</a>
+	</li>
+	<li class="" id="guide">
+		<a href="/guide">Getting Started</a>
+	</li>
   </ul>
   <ul class="icons">
     {
@@ -30,13 +49,18 @@ const { pathname } = url;
       })
     }
     <li>
-      <a href="#" class="icon brands fa-discord"><span class="label">Discord</span></a>
+      <a href="https://discord.gg/3qN6bhxBEB" class="icon brands fa-discord"><span class="label">Discord</span></a>
     </li>
     <li>
-      <a href="#" class="icon brands fa-github"><span class="label">Github</span></a>
-    </li>
-    <li>
-      <a href="#" class="icon brands fa-robot"><span class="label">Get Started!</span></a>
+      <a href="https://github.com/The-MazeCraft-Contest" class="icon brands fa-github"><span class="label">Github</span></a>
     </li>
   </ul>
+  <div class="shareLink">
+    <div class="permalink">
+      <input class="textLink" id="text" type="text" name="shortlink" value="mazecraft.thorinwasher.dev" id="copy-link" readonly="">
+      <span class="copyLink" id="copy" tooltip="Copy to clipboard">
+        <i class="icon regular fa-copy"></i>
+      </span>
+    </div>
+  </div>
 </nav>

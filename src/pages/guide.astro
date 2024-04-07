@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE } from '../config';
+---
+<script>
+const active = document.getElementById("guide");
+const classes = active.classList;
+classes.add("active");
+var d = document.getElementById("guide");
+d.className += " active";
+</script>
+<meta name="description" content="Mazecraft Guide: A quick overview about how to make a basic maze bot!">
+	<Layout title={SITE.title}>
+	<div id="main">
+		<section id="temporary">
+			<p>
+				<strong>Getting Started: A Learner's Trail</strong>
+			</p>
+			<p>(Temporary post until someone gets around to making a better one!)</p>
+			<p>
+				<strong>Most bots are usually written with one of the following:</strong>
+			</p>
+			<p>
+				<strong>Neo</strong>
+			</p>
+			<ul>
+				<li>
+					<a href="https://neoforged.net/">Website</a>
+				</li>
+				<li>
+					<a href="https://docs.neoforged.net/">Documentation</a>
+				</li>
+				<li>Client Wrapper</li>
+				<li>Java</li>
+				<li>Usually used for lighter client mods.</li>
+			</ul>
+			<p>
+				<strong>Fabric</strong>
+			</p>
+			<ul>
+				<li>
+					<a href="https://fabricmc.net/">Website</a>
+				</li>
+				<li>
+					<a href="https://docs.fabricmc.net/develop/">Documentation</a>
+				</li>
+				<li>Client Wrapper</li>
+				<li>Java</li>
+				<li>Usually used for heavier client mods.</li>
+			</ul>
+			<p>
+				<strong>Soulfire</strong>
+			</p>
+			<ul>
+				<li>
+					<a href="https://soulfiremc.com/">Website</a>
+				</li>
+				<li>
+					<a href="https://github.com/AlexProgrammerDE/SoulFire?tab=readme-ov-file#-developer-api">Documentation</a>
+				</li>
+				<li>Client Library</li>
+				<li>Java</li>
+				<li>Usually used for bots (no graphics/interface).</li>
+			</ul>
+			<p>
+				<strong>Azalea</strong>
+			</p>
+			<ul>
+				<li>
+					<a href="https://github.com/azalea-rs/azalea/">Website</a>
+				</li>
+				<li>
+					<a href="https://azalea.matdoes.dev/azalea/">Documentation</a>
+				</li>
+				<li>Client Library</li>
+				<li>Rust</li>
+				<li>Like Soulfire, but for/with rust.</li>
+			</ul>
+			<p>
+				<strong>MineSharp</strong>
+			</p>
+			<ul>
+				<li>
+					<a href="https://github.com/psu-de/MineSharp">Website</a>
+				</li>
+				<li>
+					<a href="https://github.com/psu-de/MineSharp/blob/main/MineSharp.Bot/README.md">Documentation</a>
+				</li>
+				<li>Client Library</li>
+				<li>C#</li>
+				<li>Like Soulfire, but for/with C#.</li>
+			</ul>
+			<p>
+				<strong>Botcraft</strong>
+			</p>
+			<ul>
+				<li>
+					<a href="https://github.com/adepierre/Botcraft">Website</a>
+				</li>
+				<li>
+					<a href="https://adepierre.github.io/Botcraft/">Documentation</a>
+				</li>
+				<li>Client Library</li>
+				<li>C++</li>
+				<li>Like Soulfire, but for/with c++.</li>
+			</ul>
+			<p>
+				<strong>Mineflayer</strong>
+			</p>
+			<ul>
+				<li>
+					<a href="https://github.com/PrismarineJS/mineflayer">Website</a>
+				</li>
+				<li>
+					<a href="https://prismarinejs.github.io/mineflayer/#/">Documentation</a>
+				</li>
+				<li>Client Library</li>
+				<li>JavaSript</li>
+				<li>Like Soulfire, but with JavaScript and for Python and/or JS.</li>
+			</ul>
+		</section>
+	</div>
+</Layout>

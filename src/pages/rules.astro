@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE } from '../config';
+
+---
+
+<script>
+const active = document.getElementById("rules");
+const classes = active.classList;
+classes.add("active");
+var d = document.getElementById("rules");
+d.className += " active";
+</script>
+
+<meta name="description" content="Mazecraft Rules: Help us ensure the maze remains fair!">
+	<Layout title={SITE.title}>
+	<div id="main">
+		<section id="Gameplay Rules">
+			<h1>Gameplay Rules</h1>
+			<ol>
+				<li>Client side modifications are allowed <strong>EXCEPT FOR</strong>:<ul>
+						<li>Do not mess with movement speed (bhop, etc.).</li>
+						<li>Do not escape the maze (teleporting).</li>
+						<li>Do not walk through walls (phasing).</li>
+					</ul>
+				</li>
+				<li>Keep usernames/skins appropriate and respectful.</li>
+				<li>If something isn&apos;t working properly, don&apos;t abuse it; report it!</li>
+				<li>Only one active account per person at any given time!<ul>
+						<li>Only one concurrent connection per IP!</li>
+						<li>Automated leaderboard results are attached to single MC accounts!</li>
+					</ul>
+				</li>
+			</ol>
+		</section>
+	</div>
+</Layout>

@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE } from '../config';
+---
+<script>
+const active = document.getElementById("leaderboards");
+const classes = active.classList;
+classes.add("active");
+var d = document.getElementById("leaderboards");
+d.className += " active";
+</script>
+
+<meta name="description" content="Mazecraft Leaderboards: Recorded achievements from players traversing the maze!">
+
+<Layout title={SITE.title}>
+  <div id="main">
+	<section id="content1">
+		<h1>Leaderboards</h1>
+		<ul class="actions">
+        <li><a href="#" class="button primary">Record Distances</a></li>
+        <li><a href="#" class="button">Current Distances</a></li>
+		<li><a href="#" class="button">Average Distances</a></li>
+		<li><a href="#" class="button">Cumulative Distances</a></li>
+      </ul>
+		<h2>This system has not yet been implemented! Please check back later!</h2>
+    </section>
+  </div>
+</Layout>

@@ -4,57 +4,16 @@ import { CONTACT, SOCIAL_MEDIA_ITEMS } from 'src/config';
 
 <footer id="footer">
   <section>
-    <form method="post" action={CONTACT.formSubmitUrl}>
-      <div class="fields">
-        <div class="field">
-          <label for="name">Name</label>
-          <input type="text" name="name" id="name" />
-        </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="text" name="email" id="email" />
-        </div>
-        <div class="field">
-          <label for="message">Message</label>
-          <textarea name="message" id="message" rows="3"></textarea>
-        </div>
-      </div>
-      <ul class="actions">
-        <li><input type="submit" value="Send Message" /></li>
-      </ul>
-    </form>
+    <h3>Server IP:</h3>
+	<p><code>mazecraft.thorinwasher.dev</code>
   </section>
-  <section class="split contact">
-    <section class="alt">
-      <h3>Address</h3>
-      <p>
-        {CONTACT.address[0]}<br />
-        {CONTACT.address[1]}
-      </p>
-    </section>
-    <section>
-      <h3>Phone</h3>
-      <p><a href={`tel:${CONTACT.phone}`}>{CONTACT.phone}</a></p>
-    </section>
-    <section>
-      <h3>Email</h3>
-      <p><a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></p>
-    </section>
-    <section>
-      <h3>Social</h3>
-      <ul class="icons alt">
-        {
-          SOCIAL_MEDIA_ITEMS.map((item) => {
-            return (
-              <li>
-                <a href={item.path} class={`icon brands alt ${item.iconClass}`}>
-                  <span class="label">{item.title}</span>
-                </a>
-              </li>
-            );
-          })
-        }
-      </ul>
-    </section>
+  <section>
+    <h3>Support:</h3>
+	<a href="/rules">Rules</a> &emsp; <a href="/privacy">Privacy Policy</a> &emsp;	<a href="/discord">Report a Player</a> &emsp; <a href="https://mazecraft.thorinwasher.dev/discord">Appeals</a>
   </section>
+	<meta name="description" content="Mazecraft: A programming contest to navigate an infinite and constantly regenerating maze.">
+	<meta name="keywords" content="Minecraft, Mazecraft, Leaderboard, Tree Traversal, Micromouse">
+	<meta name="author" content="Mazecraft">
+	<meta data-rh="true" property="twitter:image" content="https://github.com/The-MazeCraft-Contest/mazecraft.thorinwasher.dev/assets/49039536/4643a520-faf8-4e5c-a97c-72ad82e06489">
+	<meta name="theme-color" content="#131321">
 </footer>

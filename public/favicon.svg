@@ -1,13 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 36 36">
-  <path fill="#000" d="M22.25 4h-8.5a1 1 0 0 0-.96.73l-5.54 19.4a.5.5 0 0 0 .62.62l5.05-1.44a2 2 0 0 0 1.38-1.4l3.22-11.66a.5.5 0 0 1 .96 0l3.22 11.67a2 2 0 0 0 1.38 1.39l5.05 1.44a.5.5 0 0 0 .62-.62l-5.54-19.4a1 1 0 0 0-.96-.73Z"/>
-  <path fill="url(#gradient)" d="M18 28a7.63 7.63 0 0 1-5-2c-1.4 2.1-.35 4.35.6 5.55.14.17.41.07.47-.15.44-1.8 2.93-1.22 2.93.6 0 2.28.87 3.4 1.72 3.81.34.16.59-.2.49-.56-.31-1.05-.29-2.46 1.29-3.25 3-1.5 3.17-4.83 2.5-6-.67.67-2.6 2-5 2Z"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
   <defs>
-    <linearGradient id="gradient" x1="16" x2="16" y1="32" y2="24" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#000"/>
-      <stop offset="1" stop-color="#000" stop-opacity="0"/>
-    </linearGradient>
+    <style>
+      .cls-1 {
+        fill: #040e17;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #1b232b;
+      }
+
+      .cls-3 {
+        fill: #fff;
+        font-family: LucidaConsole, 'Lucida Console';
+        font-size: 33px;
+      }
+    </style>
   </defs>
-	<style>
-    @media (prefers-color-scheme:dark){:root{filter:invert(100%)}}
-  </style>
+  <g id="Reference">
+    <image width="256" height="256" transform="scale(.25)" xlink:href="smallicon.png"/>
+  </g>
+  <g id="Background">
+    <rect class="cls-1" width="64" height="64"/>
+  </g>
+  <g id="Maze">
+    <polygon class="cls-2" points="38 2 38 20 32 20 32 8 2 8 2 2 38 2"/>
+    <polygon class="cls-2" points="32 38 32 50 26 50 26 44 14 44 14 20 8 20 8 62 2 62 2 14 26 14 26 20 20 20 20 38 32 38"/>
+    <polygon class="cls-2" points="32 56 32 62 14 62 14 50 20 50 20 56 32 56"/>
+    <polygon class="cls-2" points="44 32 44 50 50 50 50 62 44 62 44 56 38 56 38 32 26 32 26 26 44 26 44 14 50 14 50 32 44 32"/>
+    <polygon class="cls-2" points="62 38 62 62 56 62 56 44 50 44 50 38 62 38"/>
+    <polygon class="cls-2" points="62 2 62 32 56 32 56 8 44 8 44 2 62 2"/>
+  </g>
+  <g id="Text">
+    <text class="cls-3" transform="translate(2.17 44.72)"><tspan x="0" y="0">&lt;/&gt;</tspan></text>
+  </g>
 </svg>
