@@ -5,16 +5,13 @@ import { SITE } from '../config';
 
 <script>
   function fetchPage(page) {
-    return fetch(
-      'http://play.mazecraft.thorinwasher.dev:8080/json/max_players/' + page,
-      {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        referrerPolicy: 'no-referrer',
+    return fetch('http://localhost:8080/json/max_players/' + page, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
       },
-    )
+      referrerPolicy: 'no-referrer',
+    })
       .then((response) => response.json())
       .then((data) => {
         return data;
@@ -22,18 +19,28 @@ import { SITE } from '../config';
   }
 
   function createItem(jsonItem) {
-    const item = document.createElement('li');
-    const position = document.createElement('div');
+    const item = document.createElement('tr');
+    item.classList.add('playerScoreItem');
+    const position = document.createElement('td');
     position.textContent = jsonItem['position'];
     item.appendChild(position);
-    const username = document.createElement('div');
+    const username = document.createElement('td');
     username.title = jsonItem['uuid'];
     username.textContent = jsonItem['username'];
     item.appendChild(username);
-    const score = document.createElement('div');
+    const score = document.createElement('td');
     score.textContent = jsonItem['score'];
     item.appendChild(score);
     return item;
+  }
+
+  function clearChildsOfClass(className, parent: HTMLElement) {
+    for (const i in parent.children) {
+      const child = parent.children[i];
+      if (child.className == 'playerScoreItem') {
+        parent.removeChild(child);
+      }
+    }
   }
 
   async function insertItems(jsonPromise) {
@@ -41,7 +48,7 @@ import { SITE } from '../config';
     if (leaderboard == null) {
       return;
     }
-    leaderboard.innerHTML = '';
+    clearChildsOfClass('playerScoreItem', leaderboard);
     const json = await jsonPromise;
     for (const i in json) {
       const playerScoreItem = json[i];
@@ -70,7 +77,11 @@ import { SITE } from '../config';
       <ul class="actions">
         <li><a href="#" class="button primary">Current Distances</a></li>
       </ul>
-      <ul id="leaderboard"></ul>
+      <table id="leaderboard">
+        <tr id="leaderboardHeader">
+          <td>Position</td><td>Player</td><td>Score</td>
+        </tr>
+      </table>
     </section>
   </div>
 </Layout>
