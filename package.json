@@ -13,13 +13,13 @@
     "@astrojs/mdx": "^2.0.0",
     "@astrojs/rss": "^4.0.0",
     "@astrojs/sitemap": "^3.0.0",
-    "astro": "^4.0.0",
     "astro-google-fonts-optimizer": "^0.2.2",
     "date-fns": "^3.0.0"
   },
   "devDependencies": {
-    "rollup": ">=3",
+    "astro": "^4.6.3",
     "prettier-plugin-astro": "^0.13.0",
+    "rollup": ">=3",
     "sass": "^1.67.0"
   }
 }

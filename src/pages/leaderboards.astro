@@ -2,27 +2,75 @@
 import Layout from '../layouts/Layout.astro';
 import { SITE } from '../config';
 ---
+
 <script>
-const active = document.getElementById("leaderboards");
-const classes = active.classList;
-classes.add("active");
-var d = document.getElementById("leaderboards");
-d.className += " active";
+  function fetchPage(page) {
+    return fetch(
+      'http://play.mazecraft.thorinwasher.dev:8080/json/max_players/' + page,
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        referrerPolicy: 'no-referrer',
+      },
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        return data;
+      });
+  }
+
+  function createItem(jsonItem) {
+    const item = document.createElement('li');
+    const position = document.createElement('div');
+    position.textContent = jsonItem['position'];
+    item.appendChild(position);
+    const username = document.createElement('div');
+    username.title = jsonItem['uuid'];
+    username.textContent = jsonItem['username'];
+    item.appendChild(username);
+    const score = document.createElement('div');
+    score.textContent = jsonItem['score'];
+    item.appendChild(score);
+    return item;
+  }
+
+  async function insertItems(jsonPromise) {
+    const leaderboard = document.getElementById('leaderboard');
+    if (leaderboard == null) {
+      return;
+    }
+    leaderboard.innerHTML = '';
+    const json = await jsonPromise;
+    for (const i in json) {
+      const playerScoreItem = json[i];
+      console.log(playerScoreItem);
+      const item = createItem(playerScoreItem);
+      leaderboard?.appendChild(item);
+    }
+  }
+  const active = document.getElementById('leaderboards');
+  const classes = active.classList;
+  classes.add('active');
+  var d = document.getElementById('leaderboards');
+  d.className += ' active';
+  insertItems(fetchPage(0));
 </script>
 
-<meta name="description" content="Mazecraft Leaderboards: Recorded achievements from players traversing the maze!">
+<meta
+  name="description"
+  content="Mazecraft Leaderboards: Recorded achievements from players traversing the maze!"
+/>
 
 <Layout title={SITE.title}>
   <div id="main">
-	<section id="content1">
-		<h1>Leaderboards</h1>
-		<ul class="actions">
-        <li><a href="#" class="button primary">Record Distances</a></li>
-        <li><a href="#" class="button">Current Distances</a></li>
-		<li><a href="#" class="button">Average Distances</a></li>
-		<li><a href="#" class="button">Cumulative Distances</a></li>
+    <section id="content1">
+      <h1>Leaderboards</h1>
+      <ul class="actions">
+        <li><a href="#" class="button primary">Current Distances</a></li>
       </ul>
-		<h2>This system has not yet been implemented! Please check back later!</h2>
+      <ul id="leaderboard"></ul>
     </section>
   </div>
 </Layout>
