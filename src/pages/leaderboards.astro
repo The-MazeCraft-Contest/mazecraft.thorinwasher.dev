@@ -4,65 +4,11 @@ import { SITE } from '../config';
 ---
 
 <script>
-  function fetchPage(page) {
-    return fetch('http://localhost:8080/json/max_players/' + page, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      referrerPolicy: 'no-referrer',
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        return data;
-      });
-  }
-
-  function createItem(jsonItem) {
-    const item = document.createElement('tr');
-    item.classList.add('playerScoreItem');
-    const position = document.createElement('td');
-    position.textContent = jsonItem['position'];
-    item.appendChild(position);
-    const username = document.createElement('td');
-    username.title = jsonItem['uuid'];
-    username.textContent = jsonItem['username'];
-    item.appendChild(username);
-    const score = document.createElement('td');
-    score.textContent = jsonItem['score'];
-    item.appendChild(score);
-    return item;
-  }
-
-  function clearChildsOfClass(className, parent: HTMLElement) {
-    for (const i in parent.children) {
-      const child = parent.children[i];
-      if (child.className == 'playerScoreItem') {
-        parent.removeChild(child);
-      }
-    }
-  }
-
-  async function insertItems(jsonPromise) {
-    const leaderboard = document.getElementById('leaderboard');
-    if (leaderboard == null) {
-      return;
-    }
-    clearChildsOfClass('playerScoreItem', leaderboard);
-    const json = await jsonPromise;
-    for (const i in json) {
-      const playerScoreItem = json[i];
-      console.log(playerScoreItem);
-      const item = createItem(playerScoreItem);
-      leaderboard?.appendChild(item);
-    }
-  }
   const active = document.getElementById('leaderboards');
   const classes = active.classList;
   classes.add('active');
   var d = document.getElementById('leaderboards');
   d.className += ' active';
-  insertItems(fetchPage(0));
 </script>
 
 <meta
@@ -82,6 +28,8 @@ import { SITE } from '../config';
           <td>Position</td><td>Player</td><td>Score</td>
         </tr>
       </table>
+      <div id="buttonContainer"></div>
     </section>
   </div>
+  <script src="../scripts/leaderboard.js"></script>
 </Layout>
