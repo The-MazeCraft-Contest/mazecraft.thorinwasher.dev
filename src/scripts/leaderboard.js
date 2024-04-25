@@ -1,4 +1,4 @@
-const DATABASE_INTERFACE = 'http://stats.mazecraft.thorinwasher.dev:8080';
+const DATABASE_INTERFACE = 'https://stats.mazecraft.thorinwasher.dev:8443';
 
 function fetchJson(address) {
   return fetch(address, {
